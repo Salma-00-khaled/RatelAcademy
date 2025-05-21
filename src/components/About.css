@@ -1,0 +1,124 @@
+.about-container {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  direction: rtl;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-content {
+  max-width: 1200px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-title {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  background: linear-gradient(to right, #61c3e3, #024156);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.about-text {
+  font-size: 1.2rem;
+  line-height: 1.9;
+  color: #34495e;
+  text-align: justify;
+}
+
+.about-text::first-letter {
+  font-size: 2.5rem;
+  color: #126e8c;
+  float: right;
+  line-height: 1;
+  margin-left: 5px;
+}
+
+.about-image-container {
+  position: relative;
+  height: 400px;
+}
+
+.about-image {
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+  position: absolute;
+}
+
+.about-image-main {
+  width: 70%;
+  height: 70%;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  border: 5px solid white;
+}
+
+.about-image-secondary {
+  width: 60%;
+  height: 60%;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  border: 5px solid white;
+  filter: brightness(0.9);
+}
+
+@media (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-image-container {
+    height: 300px;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 20px;
+  }
+  
+  .about-content {
+    padding: 30px;
+  }
+  
+  .about-title {
+    font-size: 2rem;
+  }
+  
+  .about-text {
+    font-size: 1.1rem;
+  }
+  
+  .about-text::first-letter {
+    font-size: 2rem;
+  }
+  
+  .about-image-container {
+    height: 250px;
+  }
+}

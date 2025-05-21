@@ -1,0 +1,311 @@
+/* HomeScreen.css */
+.home-screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  margin-top: 0; /* Changed from -80px to 0 */
+  overflow: hidden;
+  text-align: center;
+}
+
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.video-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  opacity: 0;
+  transition: opacity 1s ease;
+  object-fit: cover;
+}
+
+.video-background.visible {
+  opacity: 1;
+}
+
+.image-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Centered Subtitle */
+.subtitle-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  padding: 20px;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.8s ease-out;
+  text-align: center;
+}
+
+.subtitle-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.subtitle-container {
+  background: rgba(23, 23, 23, 0.548);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: inline-block;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  color: white;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.6;
+  direction: rtl;
+}
+
+.subtitle-highlight {
+  display: block;
+  color: #dab607c9;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+/* Centered Content */
+.home-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  
+}
+
+.content {
+  background: rgba(23, 23, 23, 0.548);
+  backdrop-filter: blur(5px);
+  padding: 50px;
+  border-radius: 40px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  
+}
+
+.title {
+  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 2.5rem;
+  font-weight: bold;
+  line-height: 1.3;
+  direction: rtl;
+}
+
+.title-line {
+  display: block;
+}
+
+.title-highlight {
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.title-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: rgba(16, 142, 164, 0.3);
+  z-index: -1;
+  border-radius: 3px;
+}
+
+.whatsapp-button {
+  background: linear-gradient(135deg, #108ea4 0%, #024156 100%);
+  color: white;
+  border: none;
+  padding: 18px 35px;
+  font-size: 1.3rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(16, 142, 164, 0.4);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  direction: rtl;
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(16, 142, 164, 0.6);
+}
+
+.button-icon {
+  margin-left: 10px;
+  font-size: 1.5rem;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 10%;
+  top: 80%;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #108ea4 0%, #024156 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-icon {
+  font-size: 32px;
+}
+
+.float-tooltip {
+  position: absolute;
+  right: 80px;
+  background: #024156;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.whatsapp-float:hover .float-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 142, 164, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(16, 142, 164, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 142, 164, 0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .title {
+    font-size: 2.2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-screen {
+    margin-top: -60px;
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .subtitle-container {
+    padding: 20px;
+  }
+  
+  .content {
+    padding: 30px;
+  }
+  
+  .whatsapp-button {
+    padding: 15px 25px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.6rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .subtitle-highlight {
+    margin-top: 10px;
+  }
+  
+  .content {
+    padding: 25px 20px;
+  }
+  
+  .whatsapp-float {
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    left: 20px;
+  }
+  
+  .whatsapp-icon {
+    font-size: 28px;
+  }
+}

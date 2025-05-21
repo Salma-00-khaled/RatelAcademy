@@ -1,0 +1,240 @@
+/* Base Navbar Styles */
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  direction: rtl;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Logo Styles */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 0.5rem;
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: #086677;
+  line-height: 1.2;
+}
+
+.logo-subtext {
+  font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+  color: #636e72;
+}
+
+/* Desktop Menu */
+.nav-menu {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: all 0.4s ease-out;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item a {
+  color: #2d3436;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
+  transition: all 0.3s ease;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Hover & Active States */
+.nav-item a:hover {
+  color: #0a668e;
+  background: rgba(10, 102, 142, 0.08);
+}
+
+.nav-item.active a {
+  color: #065e89;
+  background: rgba(6, 94, 137, 0.1);
+}
+
+/* Animated Underline */
+.nav-item a::after {
+  content: "";
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1rem;
+  left: 1rem;
+  height: 2px;
+  background: linear-gradient(90deg, #065e89, #0a668e);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-item a:hover::after,
+.nav-item.active a::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #2d3436;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+/* Show only on mobile (768px and below) */
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .nav-item a {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 5rem 1.5rem 2rem;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    gap: 0;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-item {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-item a {
+    padding: 1rem 0;
+    border-radius: 0;
+    font-size: 1.1rem;
+  }
+
+  .nav-item a::after {
+    display: none;
+  }
+
+  .nav-item.active a {
+    border-right: 3px solid #065e89;
+    padding-right: 1rem;
+    background: transparent;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.5rem;
+  }
+
+  .navbar-container {
+    padding: 0 0.5rem;
+  }
+
+  .nav-menu {
+    width: 85%;
+    padding: 4rem 1rem 2rem;
+  }
+
+  .logo-text {
+    font-size: 1.3rem;
+  }
+
+  .logo-subtext {
+    font-size: 0.7rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .navbar {
+    background: rgba(30, 30, 30, 0.9);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .logo-text {
+    color: #4fc1e9;
+  }
+
+  .logo-subtext {
+    color: #a0a0a0;
+  }
+
+  .nav-item a {
+    color: #f0f0f0;
+  }
+
+  .nav-item a:hover {
+    color: #4fc1e9;
+    background: rgba(79, 193, 233, 0.1);
+  }
+
+  .nav-item.active a {
+    color: #4fc1e9;
+    background: rgba(79, 193, 233, 0.2);
+  }
+
+  .mobile-menu-btn {
+    color: #f0f0f0;
+  }
+
+  @media (max-width: 768px) {
+    .nav-menu {
+      background: rgba(30, 30, 30, 0.98);
+    }
+
+    .nav-item {
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
