@@ -6,19 +6,27 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 20px;
-  margin-top: 0; /* Changed from -80px to 0 */
-  overflow: hidden;
+  padding: 2rem 0; /* Changed from 2rem 1rem to remove horizontal padding */
+  margin: 0; /* Ensure no margin */
+  overflow-x: hidden; /* Prevent horizontal overflow */
   text-align: center;
+  width: 100vw; /* Use viewport width */
+  box-sizing: border-box;
 }
-
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling globally */
+}
 .background-container {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw; /* Use viewport width */
   height: 100%;
   z-index: -1;
+  overflow: hidden; /* Hide any potential overflow */
 }
 
 .video-background {
@@ -71,6 +79,8 @@
   transform: translateY(-20px);
   transition: all 0.8s ease-out;
   text-align: center;
+  justify-content: center;
+  right: -18px;
 }
 
 .subtitle-wrapper.visible {
