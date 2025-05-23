@@ -275,6 +275,33 @@
   color: #25D366;
 }
 
+.price-original {
+  font-size: 1.3rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+  display: block;
+}
+
+.offer-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, #22c55e, #15803d);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.offer-badge .badge-icon {
+  margin-left: 8px;
+}
+
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }

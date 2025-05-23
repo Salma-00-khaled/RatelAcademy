@@ -9,7 +9,7 @@ function Packages() {
   const handlePackageSelect = (packageData) => {
     setSelectedPackage(packageData);
 
-    const phoneNumber = '201141837325'; 
+    const phoneNumber = '201141837325';
 
     const message = `مرحباً، أود الاشتراك في الباقة التعليمية التالية:
 
@@ -22,7 +22,6 @@ function Packages() {
 📱 الرجاء التواصل معي عبر هذا الرقم لإتمام التسجيل والاستفسار.`;
 
     const encodedMessage = encodeURIComponent(message);
-
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
   };
 
@@ -32,8 +31,9 @@ function Packages() {
       sessions: "4",
       priceSAR: "25",
       priceUSD: "8.5",
-      highlight: true,
-      popular: true,
+      originalPriceSAR: "30",
+      originalPriceUSD: "10",
+     
       features: ["جلسات أسبوعية", "تسجيلات الحصص", "تقييم شهري"]
     },
     {
@@ -41,6 +41,10 @@ function Packages() {
       sessions: "8",
       priceSAR: "50",
       priceUSD: "17",
+      originalPriceSAR: "65",
+      originalPriceUSD: "22",
+       popular: true,
+      highlight: true,
       features: ["جلسات أسبوعية", "تسجيلات الحصص", "تقييم شهري", "متابعة يومية"]
     },
     {
@@ -48,6 +52,8 @@ function Packages() {
       sessions: "12",
       priceSAR: "75",
       priceUSD: "25.5",
+      originalPriceSAR: "90",
+      originalPriceUSD: "30",
       features: ["جلسات أسبوعية", "تسجيلات الحصص", "تقييم أسبوعي", "متابعة يومية", "إجازة مصغرة"]
     },
     {
@@ -55,6 +61,8 @@ function Packages() {
       sessions: "16",
       priceSAR: "100",
       priceUSD: "34",
+      originalPriceSAR: "120",
+      originalPriceUSD: "40",
       features: ["جلسات أسبوعية", "تسجيلات الحصص", "تقييم أسبوعي", "متابعة يومية", "إجازة مصغرة", "شهادة إتمام"]
     },
     {
@@ -62,6 +70,8 @@ function Packages() {
       sessions: "20",
       priceSAR: "125",
       priceUSD: "42",
+      originalPriceSAR: "150",
+      originalPriceUSD: "50",
       features: ["جلسات أسبوعية", "تسجيلات الحصص", "تقييم أسبوعي", "متابعة يومية", "إجازة مصغرة", "شهادة إتمام"]
     },
     {
@@ -69,6 +79,8 @@ function Packages() {
       sessions: "24",
       priceSAR: "150",
       priceUSD: "51",
+      originalPriceSAR: "180",
+      originalPriceUSD: "60",
       features: ["جلسات أسبوعية", "تسجيلات الحصص", "تقييم أسبوعي", "متابعة يومية", "إجازة مصغرة", "شهادة إتمام"]
     }
   ];

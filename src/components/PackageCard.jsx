@@ -1,11 +1,13 @@
 import React from 'react';
-import { FaCheck, FaStar, FaFire, FaWhatsapp } from 'react-icons/fa';
+import { FaCheck, FaStar, FaFire, FaWhatsapp, FaTag } from 'react-icons/fa';
 import './packages.css';
 
 const PackageCard = ({ 
   title, 
   priceSAR, 
   priceUSD, 
+  originalPriceSAR,
+  originalPriceUSD,
   sessions, 
   highlight, 
   popular, 
@@ -29,12 +31,29 @@ const PackageCard = ({
           <span>الأكثر طلباً</span>
         </div>
       )}
-      
+
+      {originalPriceSAR && (
+        <div className="offer-badge">
+          <FaTag className="badge-icon" />
+          <span>عرض خاص</span>
+        </div>
+      )}
+
       <h3 className="package-title">{title}</h3>
       
       <div className="price-container">
-        <span className="price">{priceSAR} ريال</span>
-        <span className="price-usd">≈ {priceUSD} دولار</span>
+        {originalPriceSAR ? (
+          <>
+            <span className="price-original">{originalPriceSAR} ريال</span>
+            <span className="price">{priceSAR} ريال</span>
+            <span className="price-usd">≈ {priceUSD} دولار</span>
+          </>
+        ) : (
+          <>
+            <span className="price">{priceSAR} ريال</span>
+            <span className="price-usd">≈ {priceUSD} دولار</span>
+          </>
+        )}
       </div>
       
       <div className="sessions-count">

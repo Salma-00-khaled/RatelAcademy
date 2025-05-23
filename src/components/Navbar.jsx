@@ -28,8 +28,8 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <a href="/" className="navbar-logo">
-          <span className="logo-text">Ratel Academy</span>
-          <span className="logo-subtext">اكاديمية رتل</span>
+          <span className="logo-text">W Ratel Academy</span>
+          <span className="logo-subtext">اكاديمية ورتل</span>
         </a>
 
         {isMobile && (

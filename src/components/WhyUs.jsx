@@ -64,7 +64,7 @@ const WhyUs = () => {
   return (
     <div className="why-us-container">
       <div className="why-us-header">
-        <h1 className="why-us-title">مميزات أكاديمية رتل</h1>
+        <h1 className="why-us-title">مميزات أكاديمية ورتل</h1>
         <p className="why-us-subtitle">نقدم لكم تجربة فريدة في تعليم القرآن الكريم واللغة العربية</p>
       </div>
       

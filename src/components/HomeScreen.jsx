@@ -60,7 +60,7 @@ const HomeScreen = () => {
         <div className={`subtitle-wrapper ${subtitleVisible ? 'visible' : ''}`}>
           <div className="subtitle-container">
             <p className="subtitle">
-              أكاديمية رتل لتعليم وحفظ القرآن الكريم
+              أكاديمية ورتل لتعليم وحفظ القرآن الكريم
               <span className="subtitle-highlight">بالتجويد والقراءات العشر</span>
             </p>
           </div>

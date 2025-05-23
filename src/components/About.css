@@ -46,12 +46,13 @@
   text-align: justify;
 }
 
-.about-text::first-letter {
-  font-size: 2.5rem;
+.a-text {
+  font-size: 1.5rem;
   color: #126e8c;
   float: right;
   line-height: 1;
   margin-left: 5px;
+  text-align: center;
 }
 
 .about-image-container {
